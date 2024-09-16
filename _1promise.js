@@ -46,30 +46,30 @@ allowing you to write cleaner and more manageable code*/
 // }
 // console.log(getJob("mongo"))
 
+// promise and understanding resolve and reject
+const promiseFour = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let error = true
+        if (!error){
+            resolve({username : "sahil ", password : "123"}) // resolve means our promise got fullfill
+        }
+        else {
+            reject("something went wrong") //reject means our promise is not get fullfill
+        }
+    },3000 )
+})
 
-// const promiseFour = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         let error = true
-//         if (error){
-//             resolve({username : "sahil ", password : "123"})
-//         }
-//         else {
-//             reject("something went wrong")
-//         }
-//     },3000 )
-// })
-
-// promiseFour
-// .then((user)=> {
-//      return user.username
-// })
-// .then((username) => {
-//     console.log(username)
-//     console.log("resolve completed")
-// })
-// .catch((error) =>{
-//     console.log(error)
-// })
+promiseFour
+.then((user)=> {
+     return user.username      // here username will become second/ change .then parameter
+})
+.then((username) => {
+    console.log(username)
+    console.log("resolve completed")
+})
+.catch((error) =>{
+    console.log(error)   //this is important for our reject if not given error is thrown
+})
 
 // async await in javascript;
 // const promiseFour = new Promise((resolve, reject) => {
