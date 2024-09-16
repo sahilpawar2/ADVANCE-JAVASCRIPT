@@ -32,6 +32,7 @@ allowing you to write cleaner and more manageable code*/
    
 //     console.log("PROMISE IS FULLFILLED")
 // })
+//-------------------------------------------------------------------->
 
 
 
@@ -45,37 +46,41 @@ allowing you to write cleaner and more manageable code*/
 
 // }
 // console.log(getJob("mongo"))
+//------------------------------------------------------------->
+
 
 // promise and understanding resolve and reject
-const promiseFour = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let error = true
-        if (!error){
-            resolve({username : "sahil ", password : "123"}) // resolve means our promise got fullfill
-        }
-        else {
-            reject("something went wrong") //reject means our promise is not get fullfill
-        }
-    },3000 )
-})
+// const promiseFour = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let error = true
+//         if (!error){
+//             resolve({username : "sahil ", password : "123"}) // resolve means our promise got fullfill
+//         }
+//         else {
+//             reject("something went wrong") //reject means our promise is not get fullfill
+//         }
+//     },3000 )
+// })
 
-promiseFour
-.then((user)=> {
-     return user.username      // here username will become second/ change .then parameter
-})
-.then((username) => {
-    console.log(username)
-    console.log("resolve completed")
-})
-.catch((error) =>{
-    console.log(error)   //this is important for our reject if not given error is thrown
-})
+// promiseFour
+// .then((user)=> {
+//      return user.username      // here username will become second/ change .then parameter
+// })
+// .then((username) => {
+//     console.log(username)
+//     console.log("resolve completed")
+// })
+// .catch((error) =>{
+//     console.log(error)   //this is important for our reject if not given error is thrown
+// })
+//------------------------------------------------>
 
-// async await in javascript;
+
+// // async await in javascript;
 // const promiseFour = new Promise((resolve, reject) => {
 //     setTimeout(() => {
 //         let error = false // in case of true the code will run but when false occurs 
-//         if (error)  // the code need error handling
+//         if (!error)  // the code need error handling
 //             {
 //             resolve({username : "sahil ", password : "123"})
 //         }
@@ -86,15 +91,18 @@ promiseFour
 
 // })
 // // now we had created the specific block for error handling in async await;
-// async function consumePromise(params) {
+// // async await is same as .then() here both known to handle asynchronous task ie:(promise, fetch,)
+
+// async function consumePromise(params) {   //(async) keyword is used to declare a asynchronous function
 //      try {
-//         const response = await promiseFour;
-//         console.log(response);
+//         const response = await promiseFour;   //(await) is used inside the async function it halts the
+//         console.log(response);   //-until promise get resolved
 //      } catch (error) {
 //         console.log(error); 
 //      } 
 // }
 // console.log(consumePromise());
+//-------------------------------------------------------------->
 
 // let url = "promise.json"
 // import fetch from 'node-fetch'; // Use import instead of require
